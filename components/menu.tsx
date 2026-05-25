@@ -30,7 +30,7 @@ const burgers = [
     name: "Burger Sigma",
     description: "Nasz klasyk! Autorski sos SIGMA na bazie majonezu, 100% wolowiny i podwojny cheddar.",
     image: burgerImages.sigma,
-    imagePosition: "object-[center_65%]",
+    imagePosition: "object-[center_75%]",
     variants: {
       classic: {
         name: "Classic",
@@ -60,7 +60,7 @@ const burgers = [
     name: "Burger Royal",
     description: "Krolewski smak z sosem ROYAL na bazie musztardy i ketchupu oraz ogorkiem piklowanym.",
     image: burgerImages.royal,
-    imagePosition: "object-[center_65%]",
+    imagePosition: "object-[center_80%]",
     variants: {
       classic: {
         name: "Classic",
@@ -92,7 +92,7 @@ const burgers = [
     name: "Burger Red Dead",
     description: "Dla odwaznych! Bardzo pikantny sos Carolina Reaper 700k+ SHU - ekstremalna ostrosc!",
     image: burgerImages.redDead,
-    imagePosition: "object-[center_65%]",
+    imagePosition: "object-[center_70%]",
     variants: {
       classic: {
         name: "Classic",
