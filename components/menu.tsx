@@ -30,53 +30,89 @@ const burgers = [
     name: "Burger Sigma",
     description: "Nasz klasyk! Autorski sos SIGMA na bazie majonezu, 100% wolowiny i podwojny cheddar.",
     image: burgerImages.sigma,
-    imagePosition: "object-[center_40%]",
+    imagePosition: "object-[center_10%]",
     variants: {
       classic: {
         name: "Classic",
-        ingredients: ["Wolowina 100%", "Podwojny cheddar", "Autorski sos SIGMA", "Bez cebuli"],
+        ingredients: [
+          "Wolowina 100%",
+          "Podwojny cheddar",
+          "Autorski sos SIGMA",
+          "Bez cebuli",
+        ],
       },
       oklahoma: {
         name: "Oklahoma",
-        ingredients: ["Wolowina 100%", "Podwojny cheddar", "Autorski sos SIGMA", "Cebula smashowana"],
+        ingredients: [
+          "Wolowina 100%",
+          "Podwojny cheddar",
+          "Autorski sos SIGMA",
+          "Cebula smashowana",
+        ],
         hasOnion: true,
       },
     },
     color: "#FFB703",
     bgClass: "bg-[#FFB703]",
   },
+
   {
     name: "Burger Royal",
     description: "Krolewski smak z sosem ROYAL na bazie musztardy i ketchupu oraz ogorkiem piklowanym.",
     image: burgerImages.royal,
-    imagePosition: "object-[center_55%]",
+    imagePosition: "object-[center_25%]",
     variants: {
       classic: {
         name: "Classic",
-        ingredients: ["Wolowina 100%", "Podwojny cheddar", "Autorski sos ROYAL", "Ogorek piklowany", "Bez cebuli"],
+        ingredients: [
+          "Wolowina 100%",
+          "Podwojny cheddar",
+          "Autorski sos ROYAL",
+          "Ogorek piklowany",
+          "Bez cebuli",
+        ],
       },
       oklahoma: {
         name: "Oklahoma",
-        ingredients: ["Wolowina 100%", "Podwojny cheddar", "Autorski sos ROYAL", "Ogorek piklowany", "Cebula smashowana"],
+        ingredients: [
+          "Wolowina 100%",
+          "Podwojny cheddar",
+          "Autorski sos ROYAL",
+          "Ogorek piklowany",
+          "Cebula smashowana",
+        ],
         hasOnion: true,
       },
     },
     color: "#E63946",
     bgClass: "bg-[#E63946]",
   },
+
   {
     name: "Burger Red Dead",
     description: "Dla odwaznych! Bardzo pikantny sos Carolina Reaper 700k+ SHU - ekstremalna ostrosc!",
     image: burgerImages.redDead,
-    imagePosition: "object-[center_55%]",
+    imagePosition: "object-[center_25%]",
     variants: {
       classic: {
         name: "Classic",
-        ingredients: ["Wolowina 100%", "Podwojny cheddar", "Sos Carolina Reaper 700k+ SHU", "Ogorek piklowany", "Bez cebuli"],
+        ingredients: [
+          "Wolowina 100%",
+          "Podwojny cheddar",
+          "Sos Carolina Reaper 700k+ SHU",
+          "Ogorek piklowany",
+          "Bez cebuli",
+        ],
       },
       oklahoma: {
         name: "Oklahoma",
-        ingredients: ["Wolowina 100%", "Podwojny cheddar", "Sos Carolina Reaper 700k+ SHU", "Ogorek piklowany", "Cebula smashowana"],
+        ingredients: [
+          "Wolowina 100%",
+          "Podwojny cheddar",
+          "Sos Carolina Reaper 700k+ SHU",
+          "Ogorek piklowany",
+          "Cebula smashowana",
+        ],
         hasOnion: true,
       },
     },
