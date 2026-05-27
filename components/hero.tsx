@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MapPin, ChevronDown, ShoppingBag, Store, Truck } from "lucide-react"
 
-const GOORDER_URL = "https://sigmaburger.goorder.pl/"
+const GOORDER_URL = "https://sigmasmash.pl/zamow"
 
 function useIsOpenNow() {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,10 +35,10 @@ export function Hero() {
       {/* Background image - no animation */}
       <div className="absolute inset-0">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a229a5fc-1b6f-4516-9493-0fba1fe327b2-MxnYXwgF9ig5yZzGHPSRr1fW0ENS0z.jpg"
-          alt="Smash burger Sigma Smash przy piecu opalanym drewnem"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-j32X3Q2RF27wgDl3OtsSLhqGFWIq8N.png"
+          alt="Sigma Smash - burgery i pizza rzymska, widok z góry na stół pełen jedzenia"
           fill
-          className="object-cover object-[center_70%]"
+          className="object-cover object-center"
           priority
         />
         {/* Overlay gradients */}
@@ -82,21 +82,17 @@ export function Hero() {
           
           {/* Tagline */}
           <p className="text-white/70 text-xl md:text-2xl max-w-lg mb-10 leading-relaxed font-light">
-            Prawdziwe <span className="text-[#FFB703] font-medium">smash burgery</span> z sercem. 
-            100% wolowiny, autorskie sosy, podwojny cheddar. Teraz takze <span className="text-[#FFB703] font-medium">pizza rzymska</span> w lokalu!
+            Prawdziwe <span className="text-[#FFB703] font-medium">smash burgery</span> z sercem. Świeża wołowina 100%, bez wypełniaczy, autorskie sosy, podwójny cheddar. Teraz także <span className="text-[#FFB703] font-medium">pizza rzymska</span> dostępna w lokalu!
           </p>
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <Button 
               asChild
-              size="lg"
-              className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-10 text-lg h-14 shadow-lg shadow-[#FFB703]/30 transition-all hover:scale-105 gap-2"
+              variant="outline"
+              className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-semibold rounded-full px-10 text-lg h-14 bg-white/5 backdrop-blur-sm transition-all"
             >
-              <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
-                <ShoppingBag className="w-5 h-5" />
-                Zamow online
-              </a>
+              <Link href="#menu">Zobacz menu</Link>
             </Button>
             <Button 
               asChild
@@ -124,10 +120,10 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-white font-semibold flex items-center gap-2">
-                    Lokal Bialystok
+                    Lokal Białystok
                     <MapPin className="w-3 h-3 text-white/50 group-hover:text-[#FFB703] transition-colors" />
                   </p>
-                  <p className="text-white/60 text-sm">ul. Swietojanska 4, 15-082 Bialystok</p>
+                  <p className="text-white/60 text-sm">ul. Świętojańska 4, 15-082 Białystok</p>
                 </div>
               </a>
               
@@ -160,7 +156,7 @@ export function Hero() {
           href="#menu" 
           className="flex flex-col items-center gap-2 text-white/50 hover:text-white transition-colors group"
         >
-          <span className="text-xs uppercase tracking-widest">Przewin</span>
+          <span className="text-xs uppercase tracking-widest">Przewiń</span>
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </Link>
       </div>

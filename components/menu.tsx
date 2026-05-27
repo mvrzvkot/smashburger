@@ -6,13 +6,12 @@ import { Flame, Leaf, ShoppingBag, Info } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-const GOORDER_URL = "https://sigmaburger.goorder.pl/"
+const GOORDER_URL = "https://sigmasmash.pl/zamow"
 
-// Real burger images provided by user - centered on burger
 const burgerImages = {
-  sigma: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/60878ee1-4190-4d8d-b76c-4a0cca443936-dRvRY1ShDeIcNOngMUlWyyEbE20UNO.jpg",
-  royal: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b8f5cc39-5962-4ac9-a2d9-16e1ceff20ad-O4IxaZm8gkUD3vdXbj3NTSwSpeP7JD.jpg",
-  redDead: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a229a5fc-1b6f-4516-9493-0fba1fe327b2-MxnYXwgF9ig5yZzGHPSRr1fW0ENS0z.jpg",
+  sigma: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SIGMA-XhXDA3A2aUM5Hd1ZrN4aOsvwfOlJbk.jpeg",
+  royal: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ROYAL-QU0K18oGgHtTqiuBpBt5dUsAmJ7KJ9.jpeg",
+  redDead: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RED%20DEAD.jpeg-xq2EWQIkBlWyW8EZMqWtK8xTDdonYf.png",
 }
 
 const pizzaImages = {
@@ -28,92 +27,56 @@ const pizzaImages = {
 const burgers = [
   {
     name: "Burger Sigma",
-    description: "Nasz klasyk! Autorski sos SIGMA na bazie majonezu, 100% wolowiny i podwojny cheddar.",
+    description: "Nasz klasyk! Autorski sos SIGMA na bazie majonezu, świeża wołowina 100% bez wypełniaczy i podwójny cheddar.",
     image: burgerImages.sigma,
-    imagePosition: "object-[center_75%]",
+    imagePosition: "object-[center_65%]",
     variants: {
-      classic: {
-        name: "Classic",
-        ingredients: [
-          "Wolowina 100%",
-          "Podwojny cheddar",
-          "Autorski sos SIGMA",
-          "Bez cebuli",
-        ],
-      },
       oklahoma: {
         name: "Oklahoma",
-        ingredients: [
-          "Wolowina 100%",
-          "Podwojny cheddar",
-          "Autorski sos SIGMA",
-          "Cebula smashowana",
-        ],
+        ingredients: ["Świeża wołowina 100% bez wypełniaczy", "Podwójny cheddar", "Autorski sos SIGMA", "Cebula smashowana"],
         hasOnion: true,
+      },
+      classic: {
+        name: "Classic",
+        ingredients: ["Świeża wołowina 100% bez wypełniaczy", "Podwójny cheddar", "Autorski sos SIGMA", "Bez cebuli"],
       },
     },
     color: "#FFB703",
     bgClass: "bg-[#FFB703]",
   },
-
   {
     name: "Burger Royal",
-    description: "Krolewski smak z sosem ROYAL na bazie musztardy i ketchupu oraz ogorkiem piklowanym.",
+    description: "Królewski smak z sosem ROYAL na bazie musztardy i ketchupu oraz ogórkiem piklowanym.",
     image: burgerImages.royal,
-    imagePosition: "object-[center_80%]",
+    imagePosition: "object-[center_70%]",
     variants: {
-      classic: {
-        name: "Classic",
-        ingredients: [
-          "Wolowina 100%",
-          "Podwojny cheddar",
-          "Autorski sos ROYAL",
-          "Ogorek piklowany",
-          "Bez cebuli",
-        ],
-      },
       oklahoma: {
         name: "Oklahoma",
-        ingredients: [
-          "Wolowina 100%",
-          "Podwojny cheddar",
-          "Autorski sos ROYAL",
-          "Ogorek piklowany",
-          "Cebula smashowana",
-        ],
+        ingredients: ["Świeża wołowina 100% bez wypełniaczy", "Podwójny cheddar", "Autorski sos ROYAL", "Ogórek piklowany", "Cebula smashowana"],
         hasOnion: true,
+      },
+      classic: {
+        name: "Classic",
+        ingredients: ["Świeża wołowina 100% bez wypełniaczy", "Podwójny cheddar", "Autorski sos ROYAL", "Ogórek piklowany", "Bez cebuli"],
       },
     },
     color: "#E63946",
     bgClass: "bg-[#E63946]",
   },
-
   {
     name: "Burger Red Dead",
-    description: "Dla odwaznych! Bardzo pikantny sos Carolina Reaper 700k+ SHU - ekstremalna ostrosc!",
+    description: "Dla odważnych! Bardzo pikantny sos Carolina Reaper 700k+ SHU — ekstremalna ostrość!",
     image: burgerImages.redDead,
-    imagePosition: "object-[center_70%]",
+    imagePosition: "object-[center_65%]",
     variants: {
-      classic: {
-        name: "Classic",
-        ingredients: [
-          "Wolowina 100%",
-          "Podwojny cheddar",
-          "Sos Carolina Reaper 700k+ SHU",
-          "Ogorek piklowany",
-          "Bez cebuli",
-        ],
-      },
       oklahoma: {
         name: "Oklahoma",
-        ingredients: [
-          "Wolowina 100%",
-          "Podwojny cheddar",
-          "Sos Carolina Reaper 700k+ SHU",
-          "Ogorek piklowany",
-          "Cebula smashowana",
-        ],
+        ingredients: ["Świeża wołowina 100% bez wypełniaczy", "Podwójny cheddar", "Sos Carolina Reaper 700k+ SHU", "Ogórek piklowany", "Cebula smashowana"],
         hasOnion: true,
+      },
+      classic: {
+        name: "Classic",
+        ingredients: ["Świeża wołowina 100% bez wypełniaczy", "Podwójny cheddar", "Sos Carolina Reaper 700k+ SHU", "Ogórek piklowany", "Bez cebuli"],
       },
     },
     isSpicy: true,
@@ -125,58 +88,51 @@ const burgers = [
 const pizzas = [
   {
     name: "Pizza Margherita",
-    description: "Sos z wloskich pomidorow San Marzano, mozzarella fior di latte oraz swieza bazylia.",
+    description: "Sos z włoskich pomidorów San Marzano, mozzarella fior di latte oraz świeża bazylia.",
     image: pizzaImages.margherita,
-    price: "33",
   },
   {
     name: "Pizza Pepperoni",
-    description: "Sos z wloskich pomidorow San Marzano, podwojna mozzarella fior di latte, salami oraz pepperoni.",
+    description: "Sos z włoskich pomidorów San Marzano, podwójna mozzarella fior di latte, salami oraz pepperoni.",
     image: pizzaImages.pepperoni,
-    price: "43",
   },
   {
     name: "Pizza Capriciosa",
-    description: "Sos pomidorowy, mozzarella fior di latte, pieczarki, szynka prosciutto cotto oraz boczek podwojnie wedzony.",
+    description: "Sos pomidorowy, mozzarella fior di latte, pieczarki, szynka prosciutto cotto oraz boczek podwójnie wędzony.",
     image: pizzaImages.capriciosa,
-    price: "45",
   },
   {
     name: "Pizza Cztery Sery",
     description: "Sos serowy z dodatkiem cheddara, mozzarella fior di latte, grecka feta, blue cheese oraz pecorino romano D.O.P.",
     image: pizzaImages.czterySery,
-    price: "46",
   },
   {
     name: "Pizza Ostra",
-    description: "Sos pomidorowy, mozzarella, spinata picante, chorizo, boczek wedzony, jalapeno oraz sos Carolina Reaper.",
+    description: "Sos pomidorowy, mozzarella, spinata picante, chorizo, boczek wędzony, jalapeño oraz sos Carolina Reaper.",
     image: pizzaImages.ostra,
-    price: "48",
     isSpicy: true,
   },
   {
-    name: "Pizza Parmenska",
+    name: "Pizza Parmańska",
     description: "Sos pomidorowy, mozzarella, pomidorki cherry, cebula czerwona, szynka prosciutto, rukola oraz grana padano.",
     image: pizzaImages.parmenska,
-    price: "48",
   },
   {
     name: "Pizza Texas",
-    description: "Sos BBQ, mozzarella fior di latte, boczek wedzony, szynka prosciutto cotto, wolowina, papryka oraz cebula czerwona.",
+    description: "Sos BBQ, mozzarella fior di latte, boczek wędzony, szynka prosciutto cotto, wołowina, papryka oraz cebula czerwona.",
     image: pizzaImages.texas,
-    price: "49",
   },
 ]
 
 const priceTiers = [
-  { patties: 1, weight: "100g wolowiny", price: "27,00", label: "1 KOTLET" },
-  { patties: 2, weight: "200g wolowiny", price: "37,00", label: "2 KOTLETY" },
-  { patties: 3, weight: "300g wolowiny", price: "47,00", label: "3 KOTLETY" },
+  { patties: 1, weight: "100g wołowiny", label: "1 KOTLET" },
+  { patties: 2, weight: "200g wołowiny", label: "2 KOTLETY" },
+  { patties: 3, weight: "300g wołowiny", label: "3 KOTLETY" },
 ]
 
 export function Menu() {
   const [selectedBurger, setSelectedBurger] = useState(0)
-  const [selectedVariant, setSelectedVariant] = useState<"classic" | "oklahoma">("classic")
+  const [selectedVariant, setSelectedVariant] = useState<"oklahoma" | "classic">("oklahoma")
   const [activeTab, setActiveTab] = useState<"burgers" | "pizza">("burgers")
 
   const currentBurger = burgers[selectedBurger]
@@ -193,9 +149,9 @@ export function Menu() {
             SIGMA SMASH MENU
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Wybierz swoj glod! Kazdy burger przygotowujemy ze swiezych skladnikow, a pizza pieczona jest w piecu opalanym drewnem.
+            Wybierz swój głód! Każdy burger przygotowujemy ze świeżych składników, a pizza pieczona jest w piecu opalanym drewnem.
           </p>
-          
+
           {/* Tab Switcher */}
           <div className="inline-flex bg-white rounded-2xl p-2 shadow-sm">
             <button
@@ -237,7 +193,7 @@ export function Menu() {
                   className={cn("object-cover transition-transform duration-700 group-hover:scale-105", currentBurger.imagePosition)}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                
+
                 {/* Burger name overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="flex items-center gap-3">
@@ -264,8 +220,8 @@ export function Menu() {
                     onClick={() => setSelectedBurger(index)}
                     className={cn(
                       "relative aspect-video rounded-xl overflow-hidden transition-all duration-300",
-                      selectedBurger === index 
-                        ? "ring-4 ring-[#FFB703] scale-[1.02] shadow-lg" 
+                      selectedBurger === index
+                        ? "ring-4 ring-[#FFB703] scale-[1.02] shadow-lg"
                         : "opacity-60 hover:opacity-100"
                     )}
                   >
@@ -287,23 +243,11 @@ export function Menu() {
               </div>
             </div>
 
-            {/* Right: Details & Pricing */}
+            {/* Right: Details */}
             <div className="space-y-6">
-              {/* Variant Toggle */}
+              {/* Variant Toggle — Oklahoma first */}
               <div className="bg-white rounded-2xl p-2 shadow-sm">
                 <div className="grid grid-cols-2 gap-2">
-                  <button
-                    onClick={() => setSelectedVariant("classic")}
-                    className={cn(
-                      "py-4 rounded-xl font-semibold transition-all",
-                      selectedVariant === "classic"
-                        ? "bg-[#E63946] text-white shadow-lg"
-                        : "text-muted-foreground hover:bg-muted"
-                    )}
-                  >
-                    Classic
-                    <span className="block text-xs font-normal mt-1 opacity-80">bez cebuli</span>
-                  </button>
                   <button
                     onClick={() => setSelectedVariant("oklahoma")}
                     className={cn(
@@ -317,7 +261,19 @@ export function Menu() {
                       <Leaf className="w-4 h-4" />
                       Oklahoma
                     </span>
-                    <span className="text-xs font-normal opacity-80">z cebula smashowana</span>
+                    <span className="text-xs font-normal opacity-80">z cebulą smashowaną</span>
+                  </button>
+                  <button
+                    onClick={() => setSelectedVariant("classic")}
+                    className={cn(
+                      "py-4 rounded-xl font-semibold transition-all",
+                      selectedVariant === "classic"
+                        ? "bg-[#E63946] text-white shadow-lg"
+                        : "text-muted-foreground hover:bg-muted"
+                    )}
+                  >
+                    Classic
+                    <span className="block text-xs font-normal mt-1 opacity-80">bez cebuli</span>
                   </button>
                 </div>
               </div>
@@ -326,7 +282,7 @@ export function Menu() {
               <div className="bg-white rounded-2xl p-6 shadow-sm">
                 <h4 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wide flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#FFB703]"></span>
-                  Skladniki
+                  Składniki
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {currentBurger.variants[selectedVariant].ingredients.map((ingredient, i) => (
@@ -340,7 +296,7 @@ export function Menu() {
                 </div>
               </div>
 
-              {/* Price Cards - unified price for all variants */}
+              {/* Size picker — no prices */}
               <div className="space-y-3">
                 <h4 className="font-semibold text-foreground text-sm uppercase tracking-wide flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#E63946]"></span>
@@ -350,48 +306,37 @@ export function Menu() {
                   <div
                     key={tier.patties}
                     className={cn(
-                      "flex items-center justify-between p-5 rounded-2xl transition-all",
-                      index === 1 
-                        ? "bg-[#E63946] text-white shadow-lg" 
+                      "flex items-center gap-4 p-5 rounded-2xl transition-all",
+                      index === 1
+                        ? "bg-[#E63946] text-white shadow-lg"
                         : "bg-white shadow-sm"
                     )}
                   >
-                    <div className="flex items-center gap-4">
-                      <div className={cn(
-                        "w-14 h-14 rounded-xl flex items-center justify-center font-bold text-lg",
-                        index === 1 ? "bg-white/20 text-white" : "bg-[#FFB703] text-[#1a1a1a]"
-                      )}>
-                        {tier.patties}x
-                      </div>
-                      <div>
-                        <p className="font-bold">{tier.label}</p>
-                        <p className={cn("text-sm", index === 1 ? "text-white/80" : "text-muted-foreground")}>
-                          {tier.weight}
-                        </p>
-                      </div>
+                    <div className={cn(
+                      "w-14 h-14 rounded-xl flex items-center justify-center font-bold text-lg flex-shrink-0",
+                      index === 1 ? "bg-white/20 text-white" : "bg-[#FFB703] text-[#1a1a1a]"
+                    )}>
+                      {tier.patties}x
                     </div>
-                    <div className="text-right">
-                      <p className={cn(
-                        "font-[family-name:var(--font-heading)] text-4xl",
-                        index === 1 ? "text-white" : "text-[#E63946]"
-                      )}>
-                        {tier.price}
+                    <div>
+                      <p className="font-bold">{tier.label}</p>
+                      <p className={cn("text-sm", index === 1 ? "text-white/80" : "text-muted-foreground")}>
+                        {tier.weight}
                       </p>
-                      <p className={cn("text-xs", index === 1 ? "text-white/60" : "text-muted-foreground")}>PLN</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* CTA Button */}
-              <Button 
+              <Button
                 asChild
                 size="lg"
                 className="w-full bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full h-14 text-lg gap-2"
               >
                 <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
                   <ShoppingBag className="w-5 h-5" />
-                  Zamow online
+                  Zamów online
                 </a>
               </Button>
             </div>
@@ -401,12 +346,12 @@ export function Menu() {
         {/* Pizza Section */}
         {activeTab === "pizza" && (
           <div className="max-w-6xl mx-auto">
-            {/* Info banner - subtle note about pizza availability */}
+            {/* Subtle info note */}
             <div className="bg-gradient-to-r from-[#E63946]/5 to-[#FFB703]/5 border border-[#E63946]/10 rounded-2xl p-4 mb-8 flex items-start gap-3">
               <Info className="w-5 h-5 text-[#E63946] mt-0.5 flex-shrink-0" />
               <p className="text-sm text-foreground/70">
-                Pizza rzymska pieczona w piecu opalanym drewnem przygotowywana jest w <strong>lokalu przy ul. Swietojanskiej 4</strong>. 
-                Dostepna na miejscu, na wynos oraz w zamowieniach online z dostawa.
+                Pizza rzymska pieczona w piecu opalanym drewnem przygotowywana jest w{" "}
+                <strong>lokalu przy ul. Świętoja��skiej 4</strong>. Dostępna na miejscu, na wynos oraz w zamówieniach online z dostawą.
               </p>
             </div>
 
@@ -428,9 +373,6 @@ export function Menu() {
                         <Flame className="w-5 h-5 text-white" />
                       </div>
                     )}
-                    <div className="absolute bottom-4 right-4 bg-[#E63946] text-white px-4 py-2 rounded-full font-bold">
-                      {pizza.price} PLN
-                    </div>
                   </div>
                   <div className="p-6">
                     <h3 className="font-[family-name:var(--font-heading)] text-2xl text-foreground mb-2">
@@ -446,14 +388,14 @@ export function Menu() {
 
             {/* CTA Button */}
             <div className="text-center mt-10">
-              <Button 
+              <Button
                 asChild
                 size="lg"
                 className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-12 h-14 text-lg gap-2"
               >
                 <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
                   <ShoppingBag className="w-5 h-5" />
-                  Zamow online
+                  Zamów online
                 </a>
               </Button>
             </div>

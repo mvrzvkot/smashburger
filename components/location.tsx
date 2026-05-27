@@ -1,27 +1,27 @@
 import { MapPin, Clock, Phone, Navigation, Truck, Store, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const GOORDER_URL = "https://sigmaburger.goorder.pl/"
+const GOORDER_URL = "https://sigmasmash.pl/zamow"
 
 const locations = [
   {
     id: "lokal",
-    name: "Lokal Bialystok",
+    name: "Lokal Białystok",
     type: "restaurant",
     icon: Store,
-    address: "ul. Swietojanska 4",
-    city: "15-082 Bialystok",
+    address: "ul. Świętojańska 4",
+    city: "15-082 Białystok",
     phone: "530 272 696",
     hours: [
-      { day: "Poniedzialek", time: "12:00 - 22:00" },
+      { day: "Poniedziałek", time: "12:00 - 22:00" },
       { day: "Wtorek", time: "12:00 - 22:00" },
-      { day: "Sroda", time: "12:00 - 22:00" },
+      { day: "Środa", time: "12:00 - 22:00" },
       { day: "Czwartek", time: "12:00 - 22:00" },
-      { day: "Piatek", time: "12:00 - 22:00" },
+      { day: "Piątek", time: "12:00 - 22:00" },
       { day: "Sobota", time: "12:00 - 22:00" },
       { day: "Niedziela", time: "12:00 - 22:00" },
     ],
-    features: ["Burgery", "Pizza Rzymska", "Na miejscu", "Na wynos"],
+    features: ["Burgery", "Pizza Rzymska", "Na miejscu", "Na wynos", "Zamówienia online"],
     mapsUrl: "https://maps.app.goo.gl/jSmnaKVtUwKxtux19",
     mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2397.7089853099!2d23.1541!3d53.1325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDA3JzU3LjAiTiAyM8KwMDknMTQuOCJF!5e0!3m2!1spl!2spl!4v1234567890",
     color: "#E63946",
@@ -35,11 +35,11 @@ const locations = [
     city: "16-001 Ignatki-Osiedle",
     phone: "782 250 006",
     hours: [
-      { day: "Poniedzialek", time: "12:00 - 19:00" },
+      { day: "Poniedziałek", time: "12:00 - 19:00" },
       { day: "Wtorek", time: "12:00 - 19:00" },
-      { day: "Sroda", time: "12:00 - 19:00" },
+      { day: "Środa", time: "12:00 - 19:00" },
       { day: "Czwartek", time: "12:00 - 19:00" },
-      { day: "Piatek", time: "12:00 - 19:00" },
+      { day: "Piątek", time: "12:00 - 19:00" },
       { day: "Sobota", time: "12:00 - 19:00" },
       { day: "Niedziela", time: "12:00 - 19:00" },
     ],
@@ -60,10 +60,10 @@ export function Location() {
             Lokalizacje
           </span>
           <h2 className="font-[family-name:var(--font-heading)] text-5xl md:text-6xl lg:text-7xl text-foreground mb-4">
-            ZNAJDZ NAS
+            ZNAJDŹ NAS
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Odwiedz nasz lokal w centrum Bialymstoku lub food truck w Ignatkach!
+            Odwiedź nasz lokal w centrum Białegostoku lub food truck w Ignatkach!
           </p>
         </div>
 
@@ -198,7 +198,7 @@ export function Location() {
               MASZ PYTANIA?
             </h3>
             <p className="text-white/80 mb-8 max-w-lg mx-auto">
-              Zadzwon do nas lub napisz na social media. Chetnie odpowiemy na wszystkie pytania!
+              Zadzwoń do nas lub napisz na social media. Chętnie odpowiemy na wszystkie pytania!
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a

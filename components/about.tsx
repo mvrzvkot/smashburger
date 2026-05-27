@@ -4,23 +4,23 @@ import { Beef, Award, Flame, Store, Truck } from "lucide-react"
 const features = [
   {
     icon: Beef,
-    title: "100% Wolowina",
-    description: "Tylko najwyzszej jakosci mieso wolowe, swiezo smashowane na goracej plycie.",
+    title: "100% Wołowina",
+    description: "Tylko świeża wołowina 100% bez wypełniaczy, świeżo smashowana na gorącej płycie.",
   },
   {
     icon: Award,
     title: "Autorskie Sosy",
-    description: "Nasze unikalne sosy SIGMA, ROYAL i Carolina Reaper tworzymy wedlug tajnych receptur!",
+    description: "Nasze unikalne sosy SIGMA i ROYAL tworzymy według tajnych receptur",
   },
   {
     icon: Store,
     title: "Lokal + Food Truck",
-    description: "Odwiedz nas w lokalu w Bialymstoku lub przy food trucku w Ignatkach.",
+    description: "Odwiedź nas w lokalu w Białymstoku lub przy food trucku w Ignatkach.",
   },
   {
     icon: Flame,
     title: "Pizza Rzymska",
-    description: "W lokalu serwujemy takze autentyczna pizze pieczona w piecu opalanym drewnem!",
+    description: "W lokalu serwujemy także autentyczną pizzę pieczoną w piecu opalanym drewnem!",
   },
 ]
 
@@ -40,11 +40,7 @@ export function About() {
               <span className="text-[#FFB703]">BURGERY & PIZZA</span>
             </h2>
             <p className="text-white/80 text-lg leading-relaxed mb-8">
-              Zaczelismy jako food truck z pasja do prawdziwych smash burgerow. 
-              Dzieki Waszemu wsparciu otworylismy lokal w centrum Bialymstoku, 
-              gdzie serwujemy nie tylko burgery, ale takze autentyczna <span className="text-[#FFB703] font-semibold">pizze rzymska</span>. 
-              Uzywamy tylko <span className="text-[#FFB703] font-semibold">100% wolowiny</span>, 
-              autorskich sosow i swiezych skladnikow.
+              Zaczęliśmy jako food truck z pasją do prawdziwych smash burgerów. Dzięki Waszemu wsparciu otworzyliśmy lokal w centrum Białegostoku, gdzie serwujemy nie tylko burgery, ale także autentyczną <span className="text-[#FFB703] font-semibold">pizzę rzymską</span> na cienkim spodzie. Używamy tylko <span className="text-[#FFB703] font-semibold">świeżej wołowiny 100% bez wypełniaczy</span>, autorskich sosów i świeżych składników, przygotowywanych codziennie.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
