@@ -96,11 +96,12 @@ export function Hero() {
             </Button>
             <Button 
               asChild
-              size="lg"
-              variant="outline"
-              className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-semibold rounded-full px-10 text-lg h-14 bg-white/5 backdrop-blur-sm transition-all"
+              className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-10 text-lg h-14 gap-2 transition-all"
             >
-              <Link href="#menu">Zobacz Menu</Link>
+              <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
+                <ShoppingBag className="w-5 h-5" />
+                Zamów online
+              </a>
             </Button>
           </div>
 
