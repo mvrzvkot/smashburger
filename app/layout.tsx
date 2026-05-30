@@ -165,9 +165,9 @@ export default function RootLayout({
     sameAs: [
       'https://www.facebook.com/sigmasmash',
       'https://www.tiktok.com/@sigma_burger88',
-      'https://sigmasmash.pl/zamow',
+      'https://sigmasmash.goorder.pl',
     ],
-    menu: 'https://sigmasmash.pl/zamow',
+    menu: 'https://sigmasmash.goorder.pl',
     acceptsReservations: false,
     hasMenu: {
       '@type': 'Menu',
