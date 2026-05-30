@@ -6,7 +6,7 @@ import { Flame, Leaf, ShoppingBag, Info } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-const GOORDER_URL = "https://sigmasmash.pl/zamow"
+const GOORDER_URL = "https://sigmasmash.goorder.pl"
 
 const burgerImages = {
   sigma: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SIGMA-XhXDA3A2aUM5Hd1ZrN4aOsvwfOlJbk.jpeg",

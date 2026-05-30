@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MapPin, ChevronDown, ShoppingBag, Store, Truck } from "lucide-react"
 
-const GOORDER_URL = "https://sigmasmash.pl/zamow"
+const GOORDER_URL = "https://sigmasmash.goorder.pl"
 
 function useIsOpenNow() {
   const [isOpen, setIsOpen] = useState(false)

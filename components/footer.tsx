@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const GOORDER_URL = "https://sigmasmash.pl/zamow"
+const GOORDER_URL = "https://sigmasmash.goorder.pl"
 
 export function Footer() {
   return (

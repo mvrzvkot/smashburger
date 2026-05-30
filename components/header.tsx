@@ -12,7 +12,7 @@ const navLinks = [
   { href: "#lokalizacje", label: "Lokalizacje" },
 ]
 
-const GOORDER_URL = "https://sigmasmash.pl/zamow"
+const GOORDER_URL = "https://sigmasmash.goorder.pl"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)

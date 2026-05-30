@@ -3,7 +3,7 @@
 import { ShoppingBag } from "lucide-react"
 import { useEffect, useState } from "react"
 
-const GOORDER_URL = "https://sigmasmash.pl/zamow"
+const GOORDER_URL = "https://sigmasmash.goorder.pl"
 
 export function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false)
