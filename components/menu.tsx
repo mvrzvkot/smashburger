@@ -15,6 +15,8 @@ const burgerImages = {
 }
 
 const pizzaImages = {
+  sigma: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-xy8iwKp4oFZpykRVRMRKhwveTgokQO.jpeg",
+  royal: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-8nLXhyokaoqT0OzcBAUzoBCiqi4atx.jpeg",
   margherita: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7d8b8154-4d7e-4c08-967d-71f769369c01-7TxvvFsw8wkb7YQtZFKqpjxJvMCBee.jpg",
   pepperoni: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7152f81-5b7c-4a20-a2b7-a4587a7af9ab-l9b0oywYHTFk9rRjh6iAxd7NGO5BZf.jpg",
   capriciosa: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/124b1ea1-c285-49a7-91a3-dc3b2e8d6a23-xkhD2zmE2XhcyKbJ3JCZBYe444lu0j.jpg",
@@ -86,6 +88,16 @@ const burgers = [
 ]
 
 const pizzas = [
+  {
+    name: "Pizza Sigma",
+    description: "Autorski sos SIGMA, ser mozzarella fior di latte, biała cebula oraz nasza smashowana wołowina z burgerów.",
+    image: pizzaImages.sigma,
+  },
+  {
+    name: "Pizza Royal",
+    description: "Autorski sos SIGMA, ser mozzarella fior di latte, biała cebula oraz nasza smashowana wołowina z burgerów.",
+    image: pizzaImages.royal,
+  },
   {
     name: "Pizza Margherita",
     description: "Sos z włoskich pomidorów San Marzano, mozzarella fior di latte oraz świeża bazylia.",
@@ -351,7 +363,7 @@ export function Menu() {
               <Info className="w-5 h-5 text-[#E63946] mt-0.5 flex-shrink-0" />
               <p className="text-sm text-foreground/70">
                 Pizza rzymska pieczona w piecu opalanym drewnem przygotowywana jest w{" "}
-                <strong>lokalu przy ul. Świętoja��skiej 4</strong>. Dostępna na miejscu, na wynos oraz w zamówieniach online z dostawą.
+                <strong>lokalu przy ul. Świętojańskiej 4</strong>. Dostępna na miejscu, na wynos oraz w zamówieniach online z dostawą.
               </p>
             </div>
 

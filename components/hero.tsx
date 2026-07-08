@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { MapPin, ChevronDown, ShoppingBag, Store, Truck } from "lucide-react"
 
 const GOORDER_URL = "https://sigmasmash.goorder.pl"
-const [showDeliveryPopup, setShowDeliveryPopup] = useState(false)
 
 function useIsOpenNow() {
   const [isOpen, setIsOpen] = useState(false)
@@ -95,12 +94,14 @@ export function Hero() {
             >
               <Link href="#menu">Zobacz menu</Link>
             </Button>
-            <Button
-              onClick={() => setShowDeliveryPopup(true)}
+            <Button 
+              asChild
               className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-10 text-lg h-14 gap-2 transition-all"
             >
-              <ShoppingBag className="w-5 h-5" />
-              Zamów online
+              <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
+                <ShoppingBag className="w-5 h-5" />
+                Zamów online
+              </a>
             </Button>
           </div>
 
@@ -163,41 +164,6 @@ export function Hero() {
 
       {/* Decorative glow */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#FFB703]/10 rounded-full blur-[150px] pointer-events-none" />
-      {showDeliveryPopup && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-    <div className="bg-[#1a1a1a] border border-white/10 rounded-3xl max-w-md w-full p-8 text-center shadow-2xl">
-      <h2 className="text-3xl font-bold text-white mb-4">
-        Dziś dostawy są niedostępne
-      </h2>
-
-      <p className="text-white/70 leading-relaxed mb-8">
-        Zapraszamy dziś do naszego lokalu lub food trucka.
-        <br />
-        Zamówienia online wracają jutro od godziny <span className="text-[#FFB703] font-semibold">12:00</span>.
-      </p>
-
-      <div className="flex gap-3">
-        <Button
-          variant="outline"
-          className="flex-1 border-white/20 text-white hover:bg-white/10"
-          onClick={() => setShowDeliveryPopup(false)}
-        >
-          Zamknij
-        </Button>
-
-        <Button
-          className="flex-1 bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000]"
-          onClick={() => {
-            setShowDeliveryPopup(false)
-            window.location.href = "#kontakt"
-          }}
-        >
-          Nasze lokalizacje
-        </Button>
-      </div>
-    </div>
-  </div>
-)}
     </section>
   )
 }
