@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Bebas_Neue, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import './globals.css'
 
 const bebasNeue = Bebas_Neue({ 
@@ -231,6 +232,25 @@ export default function RootLayout({
   return (
     <html lang="pl" className="bg-background">
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18327741737"
+          strategy="afterInteractive"
+        />
+        <Script id="google-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18327741737');
+          `}
+        </Script>
+        {/* Google tag (gtag.js) event */}
+        <Script id="google-gtag-event" strategy="afterInteractive">
+          {`
+            gtag('event', 'ads_conversion_Zakup_1', {});
+          `}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

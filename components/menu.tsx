@@ -14,6 +14,15 @@ const burgerImages = {
   redDead: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RED%20DEAD.jpeg-xq2EWQIkBlWyW8EZMqWtK8xTDdonYf.png",
 }
 
+const tapasImages = {
+  rollsCotto: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-2ntHglkKPm6rlDkIh5cJeQI8VT8yNE.jpeg",
+  rollsChorizo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jalapeno-OurVNFnzfl2LB2ak5OyJDrPzvEtlj5.jpeg",
+  lavash: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lavash-Ol7mtl6CfkGBwmDcuSwmaJnHNAXvuq.jpeg",
+  nachosy: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nachosy-X9LtliX3Hufy3ZEUYvatQK21DGWzcN.jpeg",
+  deska: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/deska-pKQ1bZun5Sv95bX2JgkaCnFf5bNufW.jpeg",
+  pieczywko: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pieczywko-TFIpGWTOvYAnF9eEXLcFblL9pe2CxE.jpeg",
+}
+
 const pizzaImages = {
   sigma: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-xy8iwKp4oFZpykRVRMRKhwveTgokQO.jpeg",
   royal: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-8nLXhyokaoqT0OzcBAUzoBCiqi4atx.jpeg",
@@ -136,6 +145,44 @@ const pizzas = [
   },
 ]
 
+const tapas = [
+  {
+    name: "Rolls szynka cotto",
+    description: "Sos z włoskich pomidorów San Marzano, mozzarella fior di latte oraz włoska szynka prosciutto cotto.",
+    image: tapasImages.rollsCotto,
+  },
+  {
+    name: "Rolls chorizo i jalapeño",
+    description: "Sos z włoskich pomidorów San Marzano, mozzarella fior di latte, chorizo oraz jalapeño.",
+    image: tapasImages.rollsChorizo,
+    isSpicy: true,
+  },
+  {
+    name: "Lavash Smash",
+    description: "Lavash, 2x 100g smashowanej wołowiny, ser cheddar, coleslaw, frytki oraz sos do wyboru (cebulka, sigma, royal, red dead).",
+    image: tapasImages.lavash,
+  },
+  {
+    name: "Nachosy",
+    description: "Mozzarella fior di latte, sos cheddar, smashowana wołowina, jalapeño oraz sos do wyboru.",
+    image: tapasImages.nachosy,
+    isSpicy: true,
+    imageFit: "contain",
+  },
+  {
+    name: "Deska włoskich wędlin",
+    description: "Włoskie salami, szynka parmeńska, prosciutto cotto, spinata picante, chorizo, blue cheese, nachosy oraz pieczywko czosnkowo-ziołowe.",
+    image: tapasImages.deska,
+    imageFit: "contain",
+  },
+  {
+    name: "Pieczywko czosnkowo-ziołowe",
+    description: "Chrupiące pieczywko z pieca opalanego drewnem, aromatyzowane czosnkiem i ziołami.",
+    image: tapasImages.pieczywko,
+    imageFit: "contain",
+  },
+]
+
 const priceTiers = [
   { patties: 1, weight: "100g wołowiny", label: "1 KOTLET" },
   { patties: 2, weight: "200g wołowiny", label: "2 KOTLETY" },
@@ -145,7 +192,7 @@ const priceTiers = [
 export function Menu() {
   const [selectedBurger, setSelectedBurger] = useState(0)
   const [selectedVariant, setSelectedVariant] = useState<"oklahoma" | "classic">("oklahoma")
-  const [activeTab, setActiveTab] = useState<"burgers" | "pizza">("burgers")
+  const [activeTab, setActiveTab] = useState<"burgers" | "pizza" | "tapas">("burgers")
 
   const currentBurger = burgers[selectedBurger]
 
@@ -175,7 +222,7 @@ export function Menu() {
                   : "text-muted-foreground hover:bg-muted"
               )}
             >
-              Burgery
+              Smash Burger
             </button>
             <button
               onClick={() => setActiveTab("pizza")}
@@ -187,6 +234,17 @@ export function Menu() {
               )}
             >
               Pizza Rzymska
+            </button>
+            <button
+              onClick={() => setActiveTab("tapas")}
+              className={cn(
+                "px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2",
+                activeTab === "tapas"
+                  ? "bg-[#E63946] text-white shadow-lg"
+                  : "text-muted-foreground hover:bg-muted"
+              )}
+            >
+              Specjały
             </button>
           </div>
         </div>
@@ -392,6 +450,71 @@ export function Menu() {
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {pizza.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <div className="text-center mt-10">
+              <Button
+                asChild
+                size="lg"
+                className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-12 h-14 text-lg gap-2"
+              >
+                <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
+                  <ShoppingBag className="w-5 h-5" />
+                  Zamów online
+                </a>
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {/* Tapas Section */}
+        {activeTab === "tapas" && (
+          <div className="max-w-4xl mx-auto">
+            {/* Subtle info note */}
+            <div className="bg-gradient-to-r from-[#E63946]/5 to-[#FFB703]/5 border border-[#E63946]/10 rounded-2xl p-4 mb-8 flex items-start gap-3">
+              <Info className="w-5 h-5 text-[#E63946] mt-0.5 flex-shrink-0" />
+              <p className="text-sm text-foreground/70">
+                Nasze specjały przygotowywane są w{" "}
+                <strong>lokalu przy ul. Świętojańskiej 4</strong>. Idealne na przystawkę do dzielenia. Dostępne na miejscu, na wynos oraz w zamówieniach online.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {tapas.map((item) => (
+                <div
+                  key={item.name}
+                  className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
+                >
+                  <div className={cn(
+                    "relative aspect-square",
+                    item.imageFit === "contain" && "bg-[#1a1a1a]"
+                  )}>
+                    <Image
+                      src={item.image}
+                      alt={`${item.name} - przystawka Sigma Smash`}
+                      fill
+                      className={cn(
+                        "object-center transition-transform duration-500 group-hover:scale-105",
+                        item.imageFit === "contain" ? "object-contain p-2" : "object-cover"
+                      )}
+                    />
+                    {item.isSpicy && (
+                      <div className="absolute top-4 right-4 w-10 h-10 bg-[#E63946] rounded-full flex items-center justify-center">
+                        <Flame className="w-5 h-5 text-white" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-[family-name:var(--font-heading)] text-2xl text-foreground mb-2">
+                      {item.name.toUpperCase()}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {item.description}
                     </p>
                   </div>
                 </div>
