@@ -20,7 +20,6 @@ const tapasImages = {
   lavash: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lavash-Ol7mtl6CfkGBwmDcuSwmaJnHNAXvuq.jpeg",
   nachosy: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nachosy-X9LtliX3Hufy3ZEUYvatQK21DGWzcN.jpeg",
   deska: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/deska-pKQ1bZun5Sv95bX2JgkaCnFf5bNufW.jpeg",
-  pieczywko: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pieczywko-TFIpGWTOvYAnF9eEXLcFblL9pe2CxE.jpeg",
 }
 
 const pizzaImages = {
@@ -175,12 +174,6 @@ const tapas = [
     image: tapasImages.deska,
     imageFit: "contain",
   },
-  {
-    name: "Pieczywko czosnkowo-ziołowe",
-    description: "Chrupiące pieczywko z pieca opalanego drewnem, aromatyzowane czosnkiem i ziołami.",
-    image: tapasImages.pieczywko,
-    imageFit: "contain",
-  },
 ]
 
 const priceTiers = [
@@ -212,11 +205,11 @@ export function Menu() {
           </p>
 
           {/* Tab Switcher */}
-          <div className="inline-flex bg-white rounded-2xl p-2 shadow-sm">
+          <div className="flex flex-wrap justify-center gap-2 bg-white rounded-2xl p-2 shadow-sm max-w-full">
             <button
               onClick={() => setActiveTab("burgers")}
               className={cn(
-                "px-8 py-3 rounded-xl font-semibold transition-all",
+                "px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all text-sm sm:text-base",
                 activeTab === "burgers"
                   ? "bg-[#E63946] text-white shadow-lg"
                   : "text-muted-foreground hover:bg-muted"
@@ -227,7 +220,7 @@ export function Menu() {
             <button
               onClick={() => setActiveTab("pizza")}
               className={cn(
-                "px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2",
+                "px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 text-sm sm:text-base",
                 activeTab === "pizza"
                   ? "bg-[#E63946] text-white shadow-lg"
                   : "text-muted-foreground hover:bg-muted"
@@ -238,7 +231,7 @@ export function Menu() {
             <button
               onClick={() => setActiveTab("tapas")}
               className={cn(
-                "px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2",
+                "px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 text-sm sm:text-base",
                 activeTab === "tapas"
                   ? "bg-[#E63946] text-white shadow-lg"
                   : "text-muted-foreground hover:bg-muted"
