@@ -158,7 +158,7 @@ const tapas = [
   },
   {
     name: "Lavash Smash",
-    description: "Lavash, 2x 100g smashowanej wołowiny, ser cheddar, coleslaw, frytki oraz sos do wyboru (cebulka, sigma, royal, red dead).",
+    description: "Lavash, 2x 100g smashowanej wołowiny, ser cheddar, coleslaw, frytki oraz sos do wyboru (cebulka, red dead).",
     image: tapasImages.lavash,
   },
   {
