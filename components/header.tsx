@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useOrder } from "@/components/order-dialog"
 
 const navLinks = [
   { href: "#menu", label: "Menu" },
@@ -12,10 +13,9 @@ const navLinks = [
   { href: "#lokalizacje", label: "Lokalizacje" },
 ]
 
-const GOORDER_URL = "https://sigmasmash.goorder.pl"
-
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const { openOrder } = useOrder()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#E63946]/95 backdrop-blur-sm">
@@ -43,13 +43,11 @@ export function Header() {
               </Link>
             ))}
             <Button 
-              asChild
+              onClick={openOrder}
               className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-6 gap-2"
             >
-              <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
-                <ShoppingBag className="w-4 h-4" />
-                Zamow online
-              </a>
+              <ShoppingBag className="w-4 h-4" />
+              Zamow online
             </Button>
           </nav>
 
@@ -78,13 +76,14 @@ export function Header() {
                 </Link>
               ))}
               <Button 
-                asChild
+                onClick={() => {
+                  setIsOpen(false)
+                  openOrder()
+                }}
                 className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full mt-2 gap-2"
               >
-                <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
-                  <ShoppingBag className="w-4 h-4" />
-                  Zamow online
-                </a>
+                <ShoppingBag className="w-4 h-4" />
+                Zamow online
               </Button>
             </div>
           </nav>

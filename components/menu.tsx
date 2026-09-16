@@ -5,8 +5,7 @@ import Image from "next/image"
 import { Flame, Leaf, ShoppingBag, Info } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-
-const GOORDER_URL = "https://sigmasmash.goorder.pl"
+import { useOrder } from "@/components/order-dialog"
 
 const burgerImages = {
   sigma: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SIGMA-XhXDA3A2aUM5Hd1ZrN4aOsvwfOlJbk.jpeg",
@@ -158,7 +157,7 @@ const tapas = [
   },
   {
     name: "Lavash Smash",
-    description: "Lavash, 2x 100g smashowanej wołowiny, ser cheddar, coleslaw, frytki oraz sos do wyboru (cebulka, red dead).",
+    description: "Lavash, 2x 100g smashowanej wołowiny, ser cheddar, coleslaw, frytki oraz sos do wyboru (cebulka, sigma, royal, red dead).",
     image: tapasImages.lavash,
   },
   {
@@ -185,7 +184,7 @@ const priceTiers = [
 export function Menu() {
   const [selectedBurger, setSelectedBurger] = useState(0)
   const [selectedVariant, setSelectedVariant] = useState<"oklahoma" | "classic">("oklahoma")
-  const [activeTab, setActiveTab] = useState<"burgers" | "pizza" | "tapas">("burgers")
+  const { openOrder } = useOrder()
 
   const currentBurger = burgers[selectedBurger]
 
@@ -200,51 +199,23 @@ export function Menu() {
           <h2 className="font-[family-name:var(--font-heading)] text-5xl md:text-6xl lg:text-7xl text-foreground mb-4">
             SIGMA SMASH MENU
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Wybierz swój głód! Każdy burger przygotowujemy ze świeżych składników, a pizza pieczona jest w piecu opalanym drewnem.
           </p>
+        </div>
 
-          {/* Tab Switcher */}
-          <div className="flex flex-wrap justify-center gap-2 bg-white rounded-2xl p-2 shadow-sm max-w-full">
-            <button
-              onClick={() => setActiveTab("burgers")}
-              className={cn(
-                "px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all text-sm sm:text-base",
-                activeTab === "burgers"
-                  ? "bg-[#E63946] text-white shadow-lg"
-                  : "text-muted-foreground hover:bg-muted"
-              )}
-            >
-              Smash Burger
-            </button>
-            <button
-              onClick={() => setActiveTab("pizza")}
-              className={cn(
-                "px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 text-sm sm:text-base",
-                activeTab === "pizza"
-                  ? "bg-[#E63946] text-white shadow-lg"
-                  : "text-muted-foreground hover:bg-muted"
-              )}
-            >
-              Pizza Rzymska
-            </button>
-            <button
-              onClick={() => setActiveTab("tapas")}
-              className={cn(
-                "px-4 sm:px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 text-sm sm:text-base",
-                activeTab === "tapas"
-                  ? "bg-[#E63946] text-white shadow-lg"
-                  : "text-muted-foreground hover:bg-muted"
-              )}
-            >
-              Specjały
-            </button>
+        {/* Section heading: Smash Burger */}
+        <div className="max-w-6xl mx-auto mb-8">
+          <div className="flex items-center gap-4">
+            <h3 className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl text-foreground whitespace-nowrap">
+              SMASH BURGER
+            </h3>
+            <span className="h-px flex-1 bg-border" />
           </div>
         </div>
 
         {/* Burgers Section */}
-        {activeTab === "burgers" && (
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Left: Burger Image & Selection */}
             <div className="space-y-6">
               {/* Burger Image Card */}
@@ -393,22 +364,28 @@ export function Menu() {
 
               {/* CTA Button */}
               <Button
-                asChild
+                onClick={openOrder}
                 size="lg"
                 className="w-full bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full h-14 text-lg gap-2"
               >
-                <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
-                  <ShoppingBag className="w-5 h-5" />
-                  Zamów online
-                </a>
+                <ShoppingBag className="w-5 h-5" />
+                Zamów online
               </Button>
             </div>
           </div>
-        )}
+
+        {/* Section heading: Pizza Rzymska */}
+        <div className="max-w-6xl mx-auto mt-24 mb-8">
+          <div className="flex items-center gap-4">
+            <h3 className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl text-foreground whitespace-nowrap">
+              PIZZA RZYMSKA
+            </h3>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+        </div>
 
         {/* Pizza Section */}
-        {activeTab === "pizza" && (
-          <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
             {/* Subtle info note */}
             <div className="bg-gradient-to-r from-[#E63946]/5 to-[#FFB703]/5 border border-[#E63946]/10 rounded-2xl p-4 mb-8 flex items-start gap-3">
               <Info className="w-5 h-5 text-[#E63946] mt-0.5 flex-shrink-0" />
@@ -452,22 +429,28 @@ export function Menu() {
             {/* CTA Button */}
             <div className="text-center mt-10">
               <Button
-                asChild
+                onClick={openOrder}
                 size="lg"
                 className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-12 h-14 text-lg gap-2"
               >
-                <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
-                  <ShoppingBag className="w-5 h-5" />
-                  Zamów online
-                </a>
+                <ShoppingBag className="w-5 h-5" />
+                Zamów online
               </Button>
             </div>
           </div>
-        )}
+
+        {/* Section heading: Specjały */}
+        <div className="max-w-4xl mx-auto mt-24 mb-8">
+          <div className="flex items-center gap-4">
+            <h3 className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl text-foreground whitespace-nowrap">
+              SPECJAŁY
+            </h3>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+        </div>
 
         {/* Tapas Section */}
-        {activeTab === "tapas" && (
-          <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto">
             {/* Subtle info note */}
             <div className="bg-gradient-to-r from-[#E63946]/5 to-[#FFB703]/5 border border-[#E63946]/10 rounded-2xl p-4 mb-8 flex items-start gap-3">
               <Info className="w-5 h-5 text-[#E63946] mt-0.5 flex-shrink-0" />
@@ -517,18 +500,15 @@ export function Menu() {
             {/* CTA Button */}
             <div className="text-center mt-10">
               <Button
-                asChild
+                onClick={openOrder}
                 size="lg"
                 className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-12 h-14 text-lg gap-2"
               >
-                <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
-                  <ShoppingBag className="w-5 h-5" />
-                  Zamów online
-                </a>
+                <ShoppingBag className="w-5 h-5" />
+                Zamów online
               </Button>
             </div>
           </div>
-        )}
       </div>
     </section>
   )

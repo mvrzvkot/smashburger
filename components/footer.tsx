@@ -1,11 +1,14 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const GOORDER_URL = "https://sigmasmash.goorder.pl"
+import { useOrder } from "@/components/order-dialog"
 
 export function Footer() {
+  const { openOrder } = useOrder()
+
   return (
     <footer className="bg-[#1a1a1a] py-16">
       <div className="container mx-auto px-4">
@@ -18,14 +21,12 @@ export function Footer() {
             <p className="text-white/80">Zamow online i odbierz bez czekania!</p>
           </div>
           <Button 
-            asChild
+            onClick={openOrder}
             size="lg"
             className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-10 h-14 text-lg gap-2 whitespace-nowrap"
           >
-            <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
-              <ShoppingBag className="w-5 h-5" />
-              Zamow online
-            </a>
+            <ShoppingBag className="w-5 h-5" />
+            Zamow online
           </Button>
         </div>
 
@@ -58,9 +59,9 @@ export function Footer() {
             <Link href="#lokalizacje" className="text-gray-400 hover:text-[#FFB703] transition-colors text-sm">
               Lokalizacje
             </Link>
-            <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer" className="text-[#FFB703] hover:text-[#FFA000] transition-colors text-sm font-semibold">
+            <button onClick={openOrder} className="text-[#FFB703] hover:text-[#FFA000] transition-colors text-sm font-semibold">
               Zamow online
-            </a>
+            </button>
           </nav>
 
           {/* Social */}

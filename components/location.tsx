@@ -1,8 +1,6 @@
 import { MapPin, Clock, Phone, Navigation, Truck, Store, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const GOORDER_URL = "https://sigmasmash.goorder.pl"
-
 const locations = [
   {
     id: "lokal",
@@ -22,6 +20,7 @@ const locations = [
       { day: "Niedziela", time: "12:00 - 22:00" },
     ],
     features: ["Burgery", "Pizza Rzymska", "Na miejscu", "Na wynos", "Zamówienia online"],
+    orderUrl: "https://sigmasmash.goorder.pl",
     mapsUrl: "https://maps.app.goo.gl/jSmnaKVtUwKxtux19",
     mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2397.7089853099!2d23.1541!3d53.1325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDA3JzU3LjAiTiAyM8KwMDknMTQuOCJF!5e0!3m2!1spl!2spl!4v1234567890",
     color: "#E63946",
@@ -35,15 +34,16 @@ const locations = [
     city: "16-001 Ignatki-Osiedle",
     phone: "782 250 006",
     hours: [
-      { day: "Poniedziałek", time: "12:00 - 19:00" },
-      { day: "Wtorek", time: "12:00 - 19:00" },
-      { day: "Środa", time: "12:00 - 19:00" },
-      { day: "Czwartek", time: "12:00 - 19:00" },
-      { day: "Piątek", time: "12:00 - 19:00" },
-      { day: "Sobota", time: "12:00 - 19:00" },
-      { day: "Niedziela", time: "12:00 - 19:00" },
+      { day: "Poniedziałek", time: "9:30 - 17:00" },
+      { day: "Wtorek", time: "9:30 - 17:00" },
+      { day: "Środa", time: "9:30 - 17:00" },
+      { day: "Czwartek", time: "9:30 - 17:00" },
+      { day: "Piątek", time: "9:30 - 17:00" },
+      { day: "Sobota", time: "12:00 - 17:00" },
+      { day: "Niedziela", time: "12:00 - 17:00" },
     ],
     features: ["Burgery", "Na miejscu", "Na wynos"],
+    orderUrl: "https://sigmasmashburger.goorder.pl",
     mapsUrl: "https://maps.app.goo.gl/5pMnENe6nc8fFE5RA",
     mapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2398.5!2d23.2!3d53.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDA2JzAwLjAiTiAyM8KwMTInMDAuMCJF!5e0!3m2!1spl!2spl!4v1234567890",
     color: "#FFB703",
@@ -180,7 +180,7 @@ export function Location() {
                     asChild
                     className="flex-1 rounded-full bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000]"
                   >
-                    <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
+                    <a href={location.orderUrl} target="_blank" rel="noopener noreferrer">
                       <ShoppingBag className="w-4 h-4 mr-2" />
                       Zamow
                     </a>

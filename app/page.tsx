@@ -5,17 +5,20 @@ import { About } from "@/components/about"
 import { Location } from "@/components/location"
 import { Footer } from "@/components/footer"
 import { FloatingCTA } from "@/components/floating-cta"
+import { OrderProvider } from "@/components/order-dialog"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <Header />
-      <Hero />
-      <Menu />
-      <About />
-      <Location />
-      <Footer />
-      <FloatingCTA />
-    </main>
+    <OrderProvider>
+      <main className="min-h-screen bg-background">
+        <Header />
+        <Hero />
+        <Menu />
+        <About />
+        <Location />
+        <Footer />
+        <FloatingCTA />
+      </main>
+    </OrderProvider>
   )
 }

@@ -5,8 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MapPin, ChevronDown, ShoppingBag, Store, Truck } from "lucide-react"
-
-const GOORDER_URL = "https://sigmasmash.goorder.pl"
+import { useOrder } from "@/components/order-dialog"
 
 function useIsOpenNow() {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,6 +28,7 @@ function useIsOpenNow() {
 
 export function Hero() {
   const isOpenNow = useIsOpenNow()
+  const { openOrder } = useOrder()
 
   return (
     <section className="relative min-h-screen overflow-hidden">
@@ -95,13 +95,11 @@ export function Hero() {
               <Link href="#menu">Zobacz menu</Link>
             </Button>
             <Button 
-              asChild
+              onClick={openOrder}
               className="bg-[#FFB703] text-[#1a1a1a] hover:bg-[#FFA000] font-bold rounded-full px-10 text-lg h-14 gap-2 transition-all"
             >
-              <a href={GOORDER_URL} target="_blank" rel="noopener noreferrer">
-                <ShoppingBag className="w-5 h-5" />
-                Zamów online
-              </a>
+              <ShoppingBag className="w-5 h-5" />
+              Zamów online
             </Button>
           </div>
 
